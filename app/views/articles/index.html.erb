@@ -1,0 +1,19 @@
+<h1>모든 게시글들을 보여주는 페이지</h1>
+<p>
+    <%= link_to "새 글 쓰기", new_article_path %>
+</p>
+<table>
+    <tr>
+        <th>책 이름</th>
+        <th>이 문장!</th>
+    </tr>
+    <%= @articles.each do |article| %>
+        <tr>
+            <td><%= article.title %></td>
+            <td><%= article.description %></td>
+            <td><%= link_to '수정', edit_article_path(article) %></td>
+            <td><%= link_to '보기', article_path(article) %></td>
+            <td><%= link_to '삭제', article_path(article), method: :delete, data: { confirm: "정말 삭제하시겠습니까?" } %></td>
+        </tr>
+    <% end %>
+</table>

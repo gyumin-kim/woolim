@@ -1,0 +1,9 @@
+<h1>"""특정 게시글을 보는 페이지"""</h1>
+<p>
+    책 이름 : <%= @article.title %>
+</p>
+<p>
+    이 문장! : <%= @article.description %>
+</p>
+<%= link_to '수정', edit_article_path(@article) %>
+<%= link_to '목록', articles_path %>
