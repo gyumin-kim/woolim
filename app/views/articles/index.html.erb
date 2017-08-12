@@ -7,7 +7,7 @@
         <th>책 이름</th>
         <th>이 문장!</th>
     </tr>
-    <%= @articles.each do |article| %>
+    <% @articles.each do |article| %>
         <tr>
             <td><%= article.title %></td>
             <td><%= article.description %></td>
