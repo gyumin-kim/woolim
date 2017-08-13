@@ -1,9 +1,13 @@
-<h1>"""특정 게시글을 보는 페이지"""</h1>
-<p>
-    책 이름 : <%= @article.title %>
-</p>
-<p>
-    이 문장! : <%= @article.description %>
-</p>
-<%= link_to '수정', edit_article_path(@article) %>
-<%= link_to '목록', articles_path %>
+<h2 align="center">책 이름 : <%= @article.title %></h2>
+<div class="well col-xs-8 col-xs-offset-2">
+    <h4 class="center description"><strong>이 문장! : </strong></h4>
+    <hr>
+    <%= simple_format(@article.description) %>
+    <div class="article-actions">
+        <%= link_to "수정", edit_article_path(@article), class: "btn btn-xs btn-primary" %>
+        <%= link_to "삭제", article_path(@article), method: :delete,
+        data: { confirm: "정말 삭제하시겠습니까?"},
+        class: "btn btn-xs btn-danger" %>
+        <%= link_to "목록", articles_path, class: "btn btn-xs btn-success" %>
+    </div>
+</div>
