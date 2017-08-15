@@ -1,7 +1,5 @@
 == README
 
-This project called <strong>Woolim</string> is supposed to be submitted in Likelion's hackathon(2017).
+This project called Woolim is supposed to be submitted in Likelion's hackathon(2017).
 
-Please feel free to advise me to make this project better.
-
-Woolim by <a href="https://www.facebook.com/starkying>Kyumin Kim</a>
+Woolim by Kyumin Kim
