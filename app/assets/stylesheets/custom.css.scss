@@ -23,21 +23,28 @@ $navbar-default-bg: #192033;
 
 .jumbotron {
   background-image: asset-url('bg4.jpg');
-  background-size: cover;
-  height: 550px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  box-shadow: 0 8px 16px -6px black;
+  text-shadow: black 0.3em 0.3em 0.3em;
+  height: 100vh;
 }
 
 .jumbotron h1{
-  color: #eaeaea;
+  color: #D6DED6;
   text-align: center;
   margin-bottom: 30px;
   letter-spacing: -1px;
+  font-size: 34pt;
+  font-style: italic;
   font-weight: bold;
+  font-family: Nanum Gothic;
+  line-height: 80px;
 }
 
 .btn-xlarge {
   font-size: 1.7em;
-  background-color: black;
+  background-color: #2F353B;
 }
 
 footer {

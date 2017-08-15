@@ -1,4 +1,4 @@
-<% obj.each do |article| %>
+<% obj.reverse.each do |article| %>
   <div class="row">
     <div class="col-xs-8 col-xs-offset-2">
       <div class="well well-lg">
@@ -13,7 +13,7 @@
             <%= time_ago_in_words(article.created_at) %> ago, 
             last updated: <%= time_ago_in_words(article.updated_at) %> ago
         </div>
-        <% if logged_in? && current_user == article.user %>
+        <% if logged_in? && (current_user == article.user || current_user.admin?) %>
           <div class="article-actions">
               <%= link_to "수정", edit_article_path(article), class: "btn btn-xs btn-primary" %>
               <%= link_to "삭제", article_path(article), method: :delete,

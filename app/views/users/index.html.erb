@@ -1,7 +1,7 @@
 <h1 align="center">All Woolim's Users</h1>
 <div align="center">
   <%= will_paginate %>
-  <% @user.each do |user| %>
+  <% @users.each do |user| %>
     <ul class="listing">
       <div class="row">
         <div class="well col-md-4 col-md-offset-4">
@@ -12,6 +12,10 @@
           <li>
             <small><%= pluralize(user.articles.count, "article") if user.articles %></small>
           </li>
+          <% if logged_in? and current_user.admin? %>
+            <li><%= link_to "사용자 삭제", user_path(user), method: :delete,
+                   data: { confirm: "정말 이 사용자와 해당 게시글들을 모두 삭제하시겠습니까?" } %></li>
+          <% end %>
         </div>
       </div>
     </ul>
