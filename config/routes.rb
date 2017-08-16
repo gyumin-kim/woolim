@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   root 'pages#home'
   get 'pages/about', to: 'pages#about'
   
-  resources :articles
+  resources :articles do
+    resources :comments
+  end
   
   get 'signup', to: 'users#new'
   resources :users, except: [:new]
@@ -13,6 +15,8 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
+  
+  #post '/articles/show/article_id/comments/create', to: 'comments#create'
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

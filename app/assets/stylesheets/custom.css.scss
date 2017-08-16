@@ -30,6 +30,10 @@ $navbar-default-bg: #192033;
   height: 100vh;
 }
 
+.jumbotron-login {
+  text-shadow: none;
+}
+
 .jumbotron h1{
   color: #D6DED6;
   text-align: center;
@@ -100,4 +104,9 @@ footer ul li {
 .listing {
   list-style: none;
   padding-left: 0;
+}
+
+.page {
+  text-align: right;
+  font-size: 13px;
 }

@@ -1,5 +1,12 @@
-<h2 align="center">책 이름 : <%= @article.title %></h2>
+<h2 align="center">도서명:&nbsp;&nbsp;&nbsp;&nbsp;<strong><%= @article.title %></strong></h2>
 <div class="well col-xs-8 col-xs-offset-2">
+	<h6><%= @article.author %>&nbsp;(지은이)&nbsp;&nbsp;&#124;&nbsp;&nbsp;<%= @article.publisher %></h6><hr>
+	<h4 class="description"><strong><%= @article.user.username %>'s PICK!</strong></h4>
+	<%= @article.line %>
+	<p class="page">&nbsp;&mdash;&nbsp;<%= @article.page %>쪽 중에서</p><br>
+	<hr>
+	<%= simple_format(@article.description) %> <!-- 글의 내용을 보여줌 -->
+	<hr>
 	<% if @article.user %>
 		<ul class="listing">
 			<div class="row center">
@@ -16,9 +23,7 @@
 			</div>
 		</ul>
 	<% end %>
-	<h4 class="description"><strong>이 문장! : </strong></h4>
-	<hr>
-	<%= simple_format(@article.description) %>
+	
 	<div class="article-actions">
 		<% if logged_in? && (current_user == @article.user || current_user.admin?) %>
 			<%= link_to "수정", edit_article_path(@article), class: "btn btn-xs btn-primary" %>
@@ -27,5 +32,7 @@
 			class: "btn btn-xs btn-danger" %>
 		<% end %>
 		<%= link_to "목록", articles_path, class: "btn btn-xs btn-success" %>
-	</div>
+	</div><hr>
+	<h3><strong>댓글</strong></h3>
+	<%= render 'comments/comment' %>
 </div>

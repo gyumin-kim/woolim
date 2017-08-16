@@ -1,0 +1,13 @@
+<%= pluralize(@comments.count, "comment") %><hr>
+
+<% @comments.each do |comment| %>
+  <p><strong><%= comment.user.username %></strong></p>
+  <p><%= comment.content %>&nbsp;&nbsp;
+  <% if current_user == comment.user %>
+    <%= link_to '삭제', [comment.article, comment], method: :delete %>
+      <%= link_to '수정', edit_article_comment_path(comment.article, comment) %></p>
+  <% end %>
+  <br>
+<% end %>
+
+<%= render 'comments/form' %>

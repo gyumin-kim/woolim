@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-xs-12">
+    <%= form_for([@article, @article.comments.build], :html => {class: "form-horizontal", role: "form"}) do |f| %>
+      <div class="form-group">
+        <div class="col-sm-8">
+          <%= f.text_area :content, class: "form-control", placeholder: "댓글을 입력하세요 ..." %>
+        </div>
+        <div class="col-sm-8">
+          <%= f.submit("등록") %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

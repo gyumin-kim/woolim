@@ -3,20 +3,52 @@
 <div class="row">
     <div class="col-xs-12">
       <%= form_for(@article, :html => {class: "form-horizontal", role: "form"}) do |f| %>
-         <div class="form-group">
+         <div class="form-group"> <!--책제목을 입력 받음-->
              <div class="control-label col-sm-2">
                  <%= f.label :title %>
              </div>
              <div class="col-sm-8">
-                 <%= f.text_field :title, class: "form-control", placeholder: "제목을 입력하세요", autofocus: true %>
+                 <%= f.text_field :title, class: "form-control", placeholder: "책 제목을 입력하세요", autofocus: true %>
              </div>
          </div>
-         <div class="form-group">
+         <div class="form-group"> <!--저자를 입력 받음-->
+             <div class="control-label col-sm-2">
+                 <%= f.label :author %>
+             </div>
+             <div class="col-sm-8">
+                 <%= f.text_field :author, class: "form-control", placeholder: "저자를 입력하세요" %>
+             </div>
+         </div>
+         <div class="form-group"> <!--출판사를 입력 받음-->
+             <div class="control-label col-sm-2">
+                 <%= f.label :publisher %>
+             </div>
+             <div class="col-sm-8">
+                 <%= f.text_field :publisher, class: "form-control", placeholder: "출판사를 입력하세요" %>
+             </div>
+         </div>
+         <div class="form-group"> <!--페이지를 입력 받음-->
+             <div class="control-label col-sm-2">
+                 <%= f.label :page %>
+             </div>
+             <div class="col-sm-8">
+                 <%= f.number_field :page, class: "form-control", placeholder: "몇 페이지에 있는 문장인가요?" %>
+             </div>
+         </div>
+         <div class="form-group"> <!--문장을 입력 받음-->
+             <div class="control-label col-sm-2">
+                 <%= f.label :line %>
+             </div>
+             <div class="col-sm-8">
+                 <%= f.text_area :line, rows: 5, class: "form-control", placeholder: "당신에게 울림을 전달한, 그 문장을 적어주세요" %>
+             </div>
+         </div>
+         <div class="form-group"> <!--user의 comment를 입력 받음-->
              <div class="control-label col-sm-2">
                  <%= f.label :description %>
              </div>
              <div class="col-sm-8">
-                 <%= f.text_area :description, rows: 10, class: "form-control", placeholder: "문장을 입력하세요" %>
+                 <%= f.text_area :description, rows: 10, class: "form-control", placeholder: "이 문장을 고른 이유, 느낀점 등을 자유롭게 써주세요" %>
              </div>
          </div>
          <div class="form-group">
