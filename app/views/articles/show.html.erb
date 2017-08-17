@@ -3,7 +3,7 @@
 	<h6><%= @article.author %>&nbsp;(지은이)&nbsp;&nbsp;&#124;&nbsp;&nbsp;<%= @article.publisher %></h6><hr>
 	<h4 class="description"><strong><%= @article.user.username %>'s PICK!</strong></h4>
 	<%= @article.line %>
-	<p class="page">&nbsp;&mdash;&nbsp;<%= @article.page %>쪽 중에서</p><br>
+	<p class="page">&nbsp;&mdash;&nbsp;<%= @article.book_page %>쪽 중에서</p><br>
 	<hr>
 	<%= simple_format(@article.description) %> <!-- 글의 내용을 보여줌 -->
 	<hr>
