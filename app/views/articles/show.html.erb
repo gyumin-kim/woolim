@@ -1,11 +1,12 @@
 <h2 align="center">도서명:&nbsp;&nbsp;&nbsp;&nbsp;<strong><%= @article.title %></strong></h2>
 <div class="well col-xs-8 col-xs-offset-2">
-	<h6><%= @article.author %>&nbsp;(지은이)&nbsp;&nbsp;&#124;&nbsp;&nbsp;<%= @article.publisher %></h6><hr>
-	<h4 class="description"><strong><%= @article.user.username %>'s PICK!</strong></h4>
-	<%= @article.line %>
+	<h6><%= @article.author %>&nbsp;(지은이)&nbsp;&nbsp;&#124;&nbsp;&nbsp;<%= @article.publisher %>&nbsp;(출판사)</h6><hr>
+	<h4 class="description"><b><%= @article.user.username %>'s PICK!</b></h4>
+	<p class="show-line"><i><%= @article.line %></i></p>
 	<p class="page">&nbsp;&mdash;&nbsp;<%= @article.book_page %>쪽 중에서</p><br>
 	<hr>
-	<%= simple_format(@article.description) %> <!-- 글의 내용을 보여줌 -->
+	<h5><b><%= @article.user.username %>님의 생각</b></h5>
+	<%= simple_format(@article.description) %>
 	<hr>
   
 	<% if @article.user %>
