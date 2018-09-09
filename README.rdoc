@@ -1,5 +1,0 @@
-== README
-
-This project called Woolim is supposed to be submitted in Likelion's hackathon(2017).
-
-Woolim by Kyumin Kim
